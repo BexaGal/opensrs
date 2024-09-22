@@ -5,11 +5,12 @@ j = 0
 while j < iterations:
     sigma = 0
     throws = []    
-    for i in range(5):
-        throws.append(randrange(1,5))
-    minimal_throw = min(throws)
-    for i in range(len(throws)):
-        sigma += throws[i]
-    proxsum += sigma - minimal_throw
+    for i in range(5):                      # Бросается 5 кубов
+        throws.append(randrange(1,5))       # 1к4
+    minimal_throw = min(throws)             # Выделяется минимальынй бросок
+    sigma = sum(throws)                     # Суммируются броски
+    proxsum += sigma - minimal_throw        # Из суммы вычитается минимальный бросок
     j += 1
 print(proxsum/iterations)
+
+# средний стат, выпадаемый с кубов = 11,22
